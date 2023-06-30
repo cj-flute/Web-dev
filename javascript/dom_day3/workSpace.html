@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Javascript</title>
+</head>
+<body>
+    <center>
+        <form>
+            <input type="text" placeholder="First Name" id="firstName"><br/>
+            <input type="text" placeholder="Last Name" id="lastName"></br>
+            <!--<input type="text" placeholder="Username" id="username"><br/>-->
+            <input type="password" placeholder="Password" id="password"><br>
+            <input type="number" placeholder="Age" id="age"><br/>
+            <input type="submit" value="Register" id="submit">
+        </form>
+        <button id="refreshBtn">Refresh</button>
+        <div class="table">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Frist Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
+        
+    </center>
+</body>
+<script>
+    // slecting html Element
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const regbtn = document.getElementById("submit");
+    const refreshBtn = document.getElementById("refreshBtn");
+    const age = document.getElementById("age");
+    const table = document.getElementById("table-body");
+    
+    // Creating variables
+    const users = [];
+    let count = 1;
+    regbtn.addEventListener("click", (evt) => {
+        evt.preventDefault();
+        const usernameStringF = `${firstName.value}`;
+        const usernameStringL = `${lastName.value}`;
+        const USERNAME = `${usernameStringF.charAt(0) }${usernameStringL.charAt(0)}`;
+        users.push(
+            {
+                firstName: firstName.value,
+                lastName: lastName.value,
+                username: USERNAME,
+                password: password.value,
+                age: age.value
+            });
+        console.log(users);
+        // console.log(USERNAME);
+    })
+    refreshBtn.addEventListener("click", (evt) =>{
+        console.log(evt);
+
+        // for(i=0; i<users.length; i++){
+        //     const tr = `
+        //     <tr>
+        //         <td>${count}</td>
+        //         <td>${users.firstName.value}</td>
+        //         <td>${users.lastName.value}</td>
+        //         <td>${users.username.value}</td>
+        //         <td>${users.password.value}</td>
+        //         <td>${users.age.value}</td>
+        //     </tr>
+        //     `;
+        //     table.insertAdjacentHTML("beforebegin",tr);
+        // }
+        
+        users.forEach(function (user) {
+            const tr = `
+            <tr>
+                <td>${count}</td>
+                <td>${user.firstName}</td>
+                <td>${user.lastName}</td>
+                <td>${user.username}</td>
+                <td>${user.password}</td>
+                <td>${user.age}</td>
+            </tr>
+            `;
+            table.insertAdjacentHTML("beforebegin", tr);
+        });
+        count++;
+    })
+    // function clearArray(arr){
+    //     while(arr.length > 0){
+    //         arr.pop();
+    //     }
+    // }
+    // users.clearArray();
+
+</script>
+
+</html>

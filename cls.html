@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .messageBox{
+            border: 1px solid black;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: none;
+        }
+        .message{
+            font-size: large;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button class="btn">Submit</button><br>
+    <div class="messageBox">
+        <p class="message">Success</p>
+    </div>
+
+    <script>
+        const dbUser = "Admin";
+        const dbPass = "1234";
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+        const btn = document.querySelector(".btn");
+        const messageBox = document.querySelector(".messageBox");
+        const message = document.querySelector(".message");
+
+
+        btn.addEventListener("click", function(){
+            // messageBox.style.backgroundColor = "green";
+            // message.innerHTML = "IN";
+            // message.style.color = "white";
+            messageBox.style.display = "block";
+        
+            if(username.value == dbUser && password.value == dbPass){
+                messageBox.style.backgroundColor = "green";
+                message.innerHTML = "IN";
+                message.style.color = "white";
+                console.log("Login successful");
+            }
+            else if(username.value == "" || password.value == ""){
+                message.innerHTML = "Please fill both boxes";
+
+            }
+            else{
+                messageBox.style.backgroundColor = "red";
+                message.innerHTML = "Wrong";
+                message.style.color = "white";
+                console.log("Login failed");
+            }
+
+            if(password.value !== dbPass){
+                password.style.border = "solid red";
+            }
+            if(username.value !== dbUser){
+                username.style.border = "solid red";
+            }
+        })
+    </script>
+</body>
+</html>

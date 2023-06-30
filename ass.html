@@ -1,0 +1,135 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidex Technology</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            position: relative;
+            border: 1px solid black;
+            height: 350px;
+        }
+
+        img {
+            object-fit: cover;
+        }
+
+        .box {
+            position: absolute;
+            /* border: 1px solid black; */
+            width: 40%;
+            height: 200px;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.459);
+            top: 75px;
+            left: 30%;
+            padding: 20px 25px;
+        }
+
+        .box h1 {
+            font-size: 50px;
+        }
+
+        .btn_join {
+            border: 1px solid black;
+            color: darkblue;
+            background: transparent;
+            font-size: medium;
+            padding: 5px;
+        }
+
+        .btn_join:hover {
+            background-color: rgba(112, 8, 8, 0.568);
+        }
+
+        .angle {
+            position: absolute;
+            top: 40%;
+            font-size: 50px;
+            opacity: 0.459;
+        }
+
+        .left {
+            left: 15%;
+        }
+
+        .left:hover,
+        .right:hover {
+            background-color: rgba(255, 255, 255, 0.459);
+        }
+
+        .right {
+            right: 15%;
+        }
+
+        .big_div {
+            height: 400px;
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+
+        .small_div {
+            border: 1px solid black;
+            height: 400px;
+            width: 25%;
+            float: left;
+            position: relative;
+        }
+
+        .tiny_div {
+            border: 1px solid black;
+            height: 200px;
+            width: 100%;
+        }
+        .prize{
+            position: absolute;
+            top: 50%;
+            right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="/resource/multimedia/images/pic 1.jpg" height="350" width="100%" alt="">
+        <div class="box 1">
+            <h1>Evidex Technology</h1>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, quaerat?<br>
+            <button class="btn_join">Join 📌</button>
+        </div>
+        <div class="angle left">⏪</div>
+        <div class="angle right">⏩</div>
+    </header>
+    <div class="big_div">
+        <div class="small_div">
+            <div class="tiny_div"><img src="/resource/multimedia/images/pexels-ylanite-koppens-697672.jpg" width="100%"
+                    height="100%" alt="Image 1"></div>
+            <b>Spanish Violin</b><b class="prize">$100.99</b>
+        </div>
+        <div class="small_div">
+            <div class="tiny_div"><img src="/resource/multimedia/images/pexels-pixabay-462447.jpg" width="100%"
+                    height="100%" alt="Image 2"></div>
+            <b>Italian Viola</b><b class="prize">$200.00</b>
+        </div>
+        <div class="small_div">
+            <div class="tiny_div"><img src="/resource/multimedia/images/pexels-obi-onyeador-13189690.jpg" width="100%"
+                    height="100%" alt="Image 3"></div>
+            <b>Black Watch</b><b class="prize">$90.99</b>
+        </div>
+        <div class="small_div">
+            <div class="tiny_div"><img src="/resource/multimedia/images/pexels-obi-onyeador-13197632.jpg" width="100%"
+                    height="100%" alt="Image 4"></div>
+            <b>Black Watch</b><b class="prize">$90.00</b>
+        </div>
+    </div>
+</body>
+
+</html>

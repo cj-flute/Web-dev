@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animantion</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .animation{
+            height: 200px;
+            width: 100%;
+            border: solid black;
+        }
+        .anime{
+            width: 20%;
+            height: 30px;
+            border: solid red;
+            animation-name: Kpoint;
+            animation-iteration-count: infinite;
+            animation-duration: 7s;
+        }
+        @keyframes Kpoint{
+            from{
+                margin-top: 50%;
+                width: 40%;
+            }
+            to{
+                margin-top: 0%;
+                width: 100%;
+            }
+        }
+        .text{
+            font-size: large;
+            animation-name: T;
+            animation-iteration-count: infinite;
+            animation-duration: 5s;
+        }
+        .t1{
+            animation-direction: normal;
+        }
+        .t2{
+            animation-direction: reverse;
+        }
+        .t3{
+            animation-direction: alternate;
+        }
+        .t4{
+            animation-direction: alternate-reverse;
+        }
+        @keyframes T{
+            from{
+                margin-left: 70%;
+                background-color: rgb(51, 51, 138);
+            }
+            to{
+                margin-right: 0%;
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="animation">
+        <div class="anime"></div>
+    </div>
+    <div class="animation-animate">
+        <h1 class="text t1">This text is normal</h1>
+        <h1 class="text t2">This text is reverse</h1>
+        <h1 class="text t3">This text is alternate</h1>
+        <h1 class="text t4">This text is alternate-reverse</h1>
+    </div> -->
+</body>
+</html>

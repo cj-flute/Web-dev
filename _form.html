@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <!-- <style>
+        body {
+            background-image: url("/resource/images/iphone-notebook-pen-working-34578.jpg");
+        }
+        #Bio_Form {
+            align-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        form {
+            width: 100%;
+            align-self: center;
+            
+        }
+        h1 {
+            color:black;
+            text-align: center;           
+        }
+        p {
+            font-size: 20px;
+        }
+
+    </style> -->
+</head>
+<body>
+   <form id="contactForm">
+    <div class="field">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+    </div>
+    <div class="field">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+    </div>
+    <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message"></textarea>
+    </div>
+    <div class="field">
+        <input type="submit" value="send" onclick="window.onload()">
+    </div>
+   </form>
+   <div class="welcomeMessage"></div>
+
+   <script>
+    window.onload = function(){
+        // check for loalStorage support.
+        if (localStorage){
+            // Add an event listener for form submissions
+            document.getElementById('contactForm').addEventListener('submit', function(){
+                // Get the value of the name field.
+                var name = document.getElementById('name').value;
+
+                // Save the name in localStorage.
+                localStorage.setItem('name', name);
+            });
+        }
+
+        // Retrieve the users name.
+        var name = localStorage.getItem('name');
+
+        if(name != "undefind" || name != "null"){
+            console.log("Hello " + name + "!");
+            // document.getElementById('welcomeMessage').innerHTML = "Hello"+ name + "!";
+        }else{
+            console.log("Hello");
+            document.getElementById('welcomeMessage').innerHTML = "Hello";
+        }
+    }
+   </script>
+</body>
+</html>

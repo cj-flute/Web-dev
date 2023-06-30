@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <style>
+        *{margin: 0;box-sizing: border-box;}
+        .box{
+            position: relative;
+            width: 500px;
+            height: 300px;
+            margin-top: 100px;
+            background-color: rgb(103, 80, 146);
+            box-shadow: 0px 10px 5px 5px rgb(38, 6, 80);
+            border-radius: 15px;
+        }
+        .case{
+            position: absolute;
+            width: 200px;
+            height: 50px;
+            top: 80px;
+            left: 150px;
+        }
+        .smallBox {
+            height: 50px;
+            width: 50px;
+            border-radius: 10px;
+            /* background-color: white; */
+            font-size: 40px;      
+        }
+        .coloumb{
+            height: 30px;
+            width: 10px;
+            font-size: 35px;
+            margin-top: 3px;
+        }
+        .smallBox, .coloumb{
+            float: left;
+            text-align: center;
+            margin-right: 5px;
+            color: white
+        }
+        #hr1,#hr2,#min1,#min2,#sec1,#sec2{
+            /* border: 1px solid; */
+            width: 24px;
+            height: auto;
+            float: left;
+        }
+        #btn1,#btn2{
+            position: absolute;
+            top: 60%;
+            border: none;
+        }
+        #btn1 { 
+            left: 150px;
+        }
+        #btn2 {
+            right: 160px;
+        }
+        #btn1:hover,#btn2:hover,#btn3:hover{background-color: rgb(38, 6, 80);}
+        #btn3{
+            position: absolute;
+            bottom: 10%;
+            left: 190px;
+        } 
+    </style>
+</head>
+<body>
+    <center>
+        <h1>A Timer</h1>
+        <div class="box">
+            <div class="case">
+                <div class="smallBox">
+                    <div id="hr1"></div>
+                    <div id="hr2"></div>
+                </div>
+                <div class="coloumb">:</div>
+                <div class="smallBox">
+                    <div id="min1"></div>
+                    <div id="min2"></div>
+                </div>
+                <div class="coloumb">:</div>
+                <div class="smallBox">
+                    <div id="sec1"></div>
+                    <div id="sec2"></div>
+                </div>
+            </div>
+            <button id="btn1" onclick="start()">START</button>
+            <button id="btn2" onclick="stop()">STOP</button>
+            <button id="btn3" onclick="reset()">RESET/RESTART</button>
+        </div>
+    </center>
+    <script>
+        reset();
+        function start(){
+            ++on;
+            if(on===1){
+                go = setInterval(inc, 1000);
+            }
+        }
+        function inc(){
+            ++sec2;
+            document.getElementById("sec2").innerText = sec2;
+            const SEC = sec2 === 10;
+            const MIN = sec1 === 5 && sec2 === 10;
+            const HRS = min1 === 6;
+            if(SEC){
+                ++sec1;
+                document.getElementById("sec1").innerText = sec1;
+                sec2 = 0;
+                document.getElementById("sec2").innerText = sec2;
+            }
+            if(MIN){
+                ++min2;
+                document.getElementById("min2").innerText = min2;
+                document.getElementById("sec2").innerText = sec2;
+                sec1 = 0, sec2 = 0;
+                const MIN_IN = min2 === 10;
+                document.getElementById("sec1").innerText = sec1;
+                if(MIN_IN){
+                    ++min1;
+                    document.getElementById("min1").innerText = min1;
+                    min2 = 0;
+                    document.getElementById("min2").innerText = min2;
+                }
+            }
+            if(HRS){
+                ++hr2;
+                document.getElementById("hr2").innerText = hr2;
+                min1 = 0, min2 = 0;
+                const HR_IN = hr2 === 10;
+                document.getElementById("min2").innerText = min2;
+                document.getElementById("min1").innerText = min1;
+                if(HR_IN){
+                    ++hr1;
+                    document.getElementById("hr1").innerText = hr1;
+                    hr2 = 0;
+                    document.getElementById("hr2").innerText = hr2;
+                }
+            }
+        }
+        function stop(){
+            on = 0;
+            clearInterval(go);
+        }
+        function reset(){
+            var go;
+            on  = 0;
+            sec2 = 0, sec1 = 0, min2 = 0, min1 = 0, hr2 = 0, hr1 = 0;
+            document.getElementById("sec2").innerHTML = sec2;
+            document.getElementById("sec1").innerText = sec1;
+            document.getElementById("min2").innerText = min2;
+            document.getElementById("min1").innerText = min1;
+            document.getElementById("hr2").innerText = hr2;
+            document.getElementById("hr1").innerText = hr1;
+        }
+    </script>
+</body>
+</html>

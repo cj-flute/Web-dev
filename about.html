@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticate</title>
+    <style>
+        .box{
+            border: 1px solid black;
+            height: 200px;
+            width: 400px;
+            margin-top: 200;
+        }
+        #password{
+            text-align: center;
+            margin-top: 80px;
+        }
+        .divModal{
+            height: 500px;
+            width: 50%;
+            background-color: rgba(0,0,0, 0.7);
+            position:absolute;
+            top:30;
+            bottom: 0;
+            left:25%;
+            display: none;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+     <center>
+        <div class="box">
+            <input id="password" type="password">
+            <button id="btn" onclick="check()">CHECK</button>
+        </div>
+
+        <div class="divModal">
+            <img src="/resource/multimedia/images/good symbol.png" alt="good symbol">
+        </div>
+     </center> 
+     <script>
+        const dBpassword = "11223344";
+        let password = document.getElementById("password");
+        let divModal = document.querySelector(".divModal");
+        function check(){
+            if(password.value === dBpassword){
+                // alert("OK!");
+                console.log(divModal)
+                divModal.style.display="block"
+            }
+            else{
+                alert("Wrong!")
+            }
+        }
+        
+     </script>
+</body>
+</html>

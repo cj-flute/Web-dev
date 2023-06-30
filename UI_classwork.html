@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+        header{
+            /* border: 5px solid black; */
+            width: 100%;
+            height: 100px;
+            background-color: white;
+        }
+        .backbody{
+            position: absolute;
+            top: 100px;
+            left: 0;
+        }
+        #overlay{
+            position:absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .btn{
+            color: rgb(12, 12, 12);
+            background-color: aqua;
+            width: 80px;
+            height: 30px;
+            margin-top: 30px;
+            border-radius: 15px 50px 30px 5px;
+            border: none;
+            margin-left: 5px;
+        }
+        .btn:hover{
+            background-color: transparent;
+        }
+        .form1{
+            background-color: white;
+            color: black;
+            position: absolute;
+            top: 20%;
+            left: 50px;
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .form1 input{
+            height: 30px;
+            width: 100%;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <b>CHC ITIRE MEDIA</b>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Media</a>
+            <a href="#">Product</a>
+            <a href="#">Contact</a>
+            <a href="#">About Us</a>
+        </nav>
+    </header>
+    <div class="backbody">
+        <img src="/resource/multimedia/images/macbook-pro-92904.jpg" alt="Photo" width="100%">
+    </div>
+    <div id="overlay">
+        <form action="#" class="form1">
+            <input type="text" placeholder="Name"><br><br>
+            <input type="email" placeholder="@email.com"><br><br>
+            <input type="text"placeholder="Username"><br><br>
+            <button type="submit" class="btn">Log in</button>
+        </form>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            border: 1px solid black;
+            width: 500px;
+            height: 500px;
+            position: relative;
+            /* background-color: black; */
+        }
+        .cancel{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .cancel:hover{
+            background-color: red;
+        }
+        .avatar{
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 30px;
+            /* background-image: url("/resource/multimedia/images/IMG_20220422_155520_716.jpg"); */
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        input {
+            margin: 10px;
+            width: 400px;
+            height: 35px;
+            border-radius: 10px;
+        }
+        #submit{
+            position: absolute;
+            left: 53px;
+            width: 60px;
+            height: 30px;
+        }
+        .popup{
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            top: 50%;
+            left: 40%;
+            background-color: white;
+        }
+        .overlay{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(44, 44, 44, 0.562);
+            display: none;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="container">
+            <div class="cancel">X</div>
+            <div class="avatar"><!--<img src="/resource/multimedia/images/IMG_20220422_155520_716.jpg" width="200px" height="200px" style="border-radius: 50%;" alt="Avatar"--></div>
+            <form id="form" action="#">
+                <input type="text" placeholder="Username" id="username"><br>
+                <input type="email" placeholder="Email" id="email">
+                <input type="password" placeholder="Password" id="password"><br>
+                <input type="password" placeholder="C-Password" id="cPassword"><br>
+            </form>
+            <button id="submit" onclick="mclick()">Submit</button>
+        </div>
+    </center>
+    <div class="overlay">
+        <div class="popup">
+            <div class="cancel">X</div>
+            <div class="popUpMeg" style="text-align: center;"><h3 
+                style="margin-top: 40px;">Password mismatch</h3></div>
+        </div>
+    </div>
+    
+    <script>
+        let details = document.forms["form"];
+        let data = "";
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+        let cPassword = document.getElementById("cPassword");
+        const modal = document.querySelector(".overlay");
+        const cancel = document.getElementsByClassName("cancel");
+        const container = document.querySelector(".container");
+
+        function mclick(){
+            if(password.value===cPassword.value){
+                for(let i = 0; i<details.length - 1; i++){
+                data = details.elements[i].value;
+                console.log(data);}
+            }else if(!(password.value===cPassword.value)){
+                modal.style ="display: block";
+            }
+        }
+        // cancel.addEventListener('click',cancelClick);
+        cancel.onclick =()=>{
+            alert("working")
+            modal.classList.add(".hide");
+            container.classList.add(".hide");
+        }
+    </script>
+</body>
+</html>

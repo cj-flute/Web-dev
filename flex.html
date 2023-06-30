@@ -1,0 +1,118 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .flex_cont {
+            border: 1px solid red;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: first space-around;
+        }
+
+        .flex_cont div {
+            border: 1px solid black;
+            height: 50%;
+            width: 20%;
+            align-self: center;
+        }
+
+        .grow {
+            flex-grow: 1;
+        }
+
+        .order {
+            order: 1;
+        }
+
+        .grid_cont {
+            border: 1px solid red;
+            margin-top: 50px;
+            height: 400px;
+            display: grid;
+            grid-template-rows: repeat(3, 180px);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5%;
+        }
+
+        .grid_cont div {
+            border: 1px solid black;
+        }
+
+        /* Assignment style */
+        .big_container {
+            margin-top: 20px;
+            border: 1px solid black;
+            display: grid;
+            height: 800px;
+            /* width: 100%; */
+            grid-template-rows: repeat(3, 150px);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5%;
+        }
+
+        .small_containers {
+            border: 1px solid red;
+        }
+
+        .box4 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .box5 {
+            grid-row-start: 3;
+            grid-row-end: 5;
+        }
+        .small_containers p{
+                font-size: medium;
+                font-style: bold;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="flex_cont">
+        <div class="order">1</div>
+        <div class="grow">2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <div class="grid_cont">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+    
+    <!-- Assignment work -->
+    <div class="big_container">
+        <div class="small_containers box1">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis quod voluptatum perspiciatis vel? Modi
+                enim obcaecati temporibus quos porro corporis id, dolorem laboriosam ipsam laborum voluptas error, sunt,
+                nobis odit.</p>
+        </div>
+        <div class="small_containers box2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptatem qui labore deserunt
+                exercitationem neque inventore consequuntur? Deleniti, iure accusantium atque cum, quo nihil tempore
+                unde asperiores, ea inventore temporibus.</p>
+        </div>
+        <div class="small_containers box3">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, aliquam!</p>
+        </div>
+        <div class="small_containers box4"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor praesentium amet quo, libero quibusdam eius consectetur maxime dolorem animi nostrum id labore facere sint perspiciatis ad architecto ex repellat similique veniam recusandae dignissimos nisi suscipit nobis aspernatur? Minima, asperiores laborum.</p></div>
+        <div class="small_containers box5"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error in iusto repellat iste laborum ducimus rerum fugiat voluptatibus iure similique? Praesentium hic quas dicta, doloribus, quis soluta repellat incidunt neque exercitationem ea facilis sit esse labore delectus itaque aliquam tenetur laudantium. Facere, sapiente vel! Ut molestias aliquid adipisci ea dicta.</p></div>
+        <div class="small_containers box6"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, dicta?</p></div>
+        <div class="small_containers box7"><p>Lorem ipsum dolor sit amet.</p></div>
+        <div class="small_containers box8">8</div>
+        <div class="small_containers box9">9</div>
+    </div>
+</body>
+
+</html>

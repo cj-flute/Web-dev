@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <ul id="main">
+        
+    </ul>
+    <input type="text" placeholder="Say what is on your mind" id="in">
+    <button class="btn">Share</button>
+    <script src="/resource/jss/script.js"></script>
+    <script>
+        const main = document.getElementById("main");
+        let btn = document.querySelector(".btn");
+        btn.addEventListener('click', print)
+        function print(){
+            let data = document.getElementById("in");
+            let li = document.createElement("li");
+            if(data.value != ""){
+                li.innerHTML = data.value;
+                main.appendChild(li);
+            }
+
+        }
+    </script>
+</body>
+</html>

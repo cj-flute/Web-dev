@@ -1,0 +1,217 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background-image: url(/resource/multimedia/images/macbook-pro-92904.jpg);
+            background-size: contain;
+        }
+        header{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            background-color: rgb(43, 42, 42);
+            color: white;
+            /* text-align: center; */
+            /* padding-left: 200px; */
+            /* padding-top: 20px; */
+        }
+        #hText{
+            position: absolute;
+            left: 250px;
+        }
+        #headerBtn{
+            position: absolute;
+            right: 150px;
+            top: 20px;
+        }
+        .box1{
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 25%;
+            left: 29%;
+            width: 550px;
+            height: 300px;
+            text-align: center;
+            background-color: rgba(42, 42, 42, 0.85);
+            color: white;
+            padding: 50px;
+            font-size: larger;
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            background-color: rgb(43, 42, 42);
+            color: white;
+            padding-top: 30px;
+        }
+        .from{
+            width: 100px;
+            height: 50px;
+            color: white;
+            background-color: rgb(8, 88, 91);
+            text-align: center;
+            position: absolute;
+            left: 42%;
+            font-size: larger;
+            top: 120px;
+            padding-top: 30px;
+            border-radius: 0 0 40px 0;
+            font-size: 25px;
+        }
+        #nothing{
+            margin-top: 20%;
+        }
+        .btn{
+            width: 150px;
+            height: 50px;
+            border-radius: 50px;
+        }
+        .btn, #formBtn{
+            background-color: rgb(46, 182, 46);
+            color: white;
+            border: none;
+        }
+        .btn:hover, #formBtn:hover{
+            background-color: rgb(5, 82, 5);
+        }
+        .modal{
+            position: absolute;
+            top: 100px;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: rgb(0, 0, 0);
+            width: 100%;
+            text-align: center;
+        }
+        .modal, #userLogForm, #success, #failure{
+            display: none;
+        }
+        #userLogForm, #success, #failure{
+            position: absolute;
+            left: 35%;
+            top: 30px;
+            width: 500px;
+            height: 550px;
+            background-color: white;
+        }
+        #formBtn, input{
+            width: 400px;
+            height: 50px;
+            border-radius: 25px;
+            font-size: large;
+        }
+        input{
+            padding-left: 30px;
+        }
+        img{
+            margin-top: 100px;
+            border-radius: 50%;
+        }
+        .cancel{
+            position: absolute;
+            right: 20px;
+            font-size: larger;
+        }
+        .cancel:hover{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header><h2 id="headerText"><p id="hText">EVIDEX TECHNOLOGY</p></h2>
+        <BUTton class="btn" id="headerBtn">LOGIN</BUTton>
+    </header>
+    <div class="box1">
+        <H2>WE BUILD SOMETHING</H2>
+        <div class="from">FROM</div>
+        <H2 id="nothing">NOTHING</H2>
+        <button class="btn" id="box1Btn">LOGIN</button>
+    </div>
+    <div class="modal">
+        <form action="#" id="userLogForm">
+            <p class="cancel" id="cancel1">❌</p>
+            <img src="/resource/multimedia/images/cool-avatar-transparent-image-cool-boy-avatar-11562893383qsirclznyw.png" alt="image" style="height: 100px; width: 100px;" id="profileImage">
+            <p>LOGIN</p>
+            <input type="text" placeholder="USERNAME" id="username"><br><br>
+            <input type="password" placeholder="PASSWORD" id="password"><br><br>
+            <button id="formBtn">LOGIN</button>
+            <a href="">
+                <p>Register Here!</p>
+            </a>
+        </form>
+        <div id="success">
+            <p class="cancel" id="cancel2">❌</p>
+            <img src="/resource/multimedia/images/good symbol.png" alt="image" style="height: 100px; width: 100px;" id="Mark Good">
+            <h1>LOGIN SUCCESSFUL</h1>
+        </div>
+        <div id="failure">
+            <p class="cancel" id="cancel3">❌</p>
+            <img src="/resource/multimedia/images/49-492290_mitchell-aluminium-american-symbol-red-cross-wrong-symbol.png" alt="image" style="height: 100px; width: 100px;" id="Mark Good">
+            <h1>LOGIN FAILD</h1>
+        </div>
+    </div>
+    <footer>© EVIDEX TECHNOLOGY 2023</footer>
+    <script>
+        // Creating the variables; grabing IDs and class the HTML
+        const username = document.getElementById("username"); //the username input
+        const password = document.getElementById("password"); // the password input
+        const box1Btn = document.getElementById("box1Btn"); //the login button from landing page
+        const headerBtn = document.getElementById("headerBtn"); //the login button on the header div
+        const formBtn = document.getElementById("formBtn"); // the login button on the form
+        const cancel1 = document.getElementById("cancel1"); // the cancel ❌ in the form
+        const cancel2 = document.getElementById("cancel2"); // the  cancel ❌ in login successful
+        const cancel3 = document.getElementById("cancel3"); // the cancel ❌ in login faild
+        const userLogForm = document.getElementById("userLogForm"); // the form itself
+        const success = document.getElementById("success"); // the successful div
+        const failure = document.getElementById("failure"); // the failure div
+        const modal = document.querySelector(".modal"); //a modal div with the transperent dark background
+        const dbUser = "Admin"; // the username in the data base
+        const dbPass = "1234"; // the password in the data base
+
+        // a function to enable the form and the modal show. their display was set to none by default
+        let func = function(){
+            userLogForm.style.display = "block", modal.style.display = "block";
+        }
+        //the button from landing page and the header calling an event listner that trigers the function 'func'
+        box1Btn.addEventListener("click", func);
+        headerBtn.addEventListener("click", func);
+
+        //the login button from the form calling an event listner that trigers the function that checks the
+        //value of the username input and password input before making the display to success set to 'block'
+        formBtn.addEventListener("click", function(){
+            if(username.value == dbUser && password.value == dbPass){
+                success.style.display = "block";
+            }else if(username.value == "" && password.value == ""){
+                username.style.border = "solid red";
+                password.style.border = "solid red";
+            }else if(username.value == ""){
+                username.style.border = "solid red";
+                password.style.border = "none";
+            }else if(password.value == ""){
+                password.style.border = "solid red";
+                username.style.border = "none";
+            }else if(username.value !== dbUser || password.value !== dbPass){
+                failure.style.display = "block";
+            }
+        })
+        let func2 = function(){
+            userLogForm.style.display = "none", modal.style.display = "none";
+            success.style.display = "none", failure.style.display = "none";
+        }
+        cancel1.addEventListener("click", func2);
+        cancel2.addEventListener("click", func2);
+        cancel3.addEventListener("click", func2);
+
+    </script>
+</body>
+</html>

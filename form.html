@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+    
+<body>
+    <form action="/" method="POST">
+        <label for="USERNAME">USERNAME: </label>
+        <input type="text" name="USERNAME" value="Username"> <br>
+        <label for="EMAIL">EMAIL: </label>
+        <input type="email" name="EMAIL" value="email"><br>
+        <label for="PASSWORD">PASSWORD: </label>
+        <input type="password" name="PASSWORD" value="password"><br>
+        <input type="submit"> <br>
+        <h1>RADIO BUTTON</h1>
+        <input type="radio" name="GENDER">
+        <label for="MALE">MALE </label> <br>
+        <input type="radio" name="GENDER">
+        <label for="FEMALE">FEMALE</label> <br>
+        <input type="radio" name="GENDER">
+        <label for="OTHERS">OTHERS</label> <br>
+        <h1>CHECK BOX</h1>
+        <input type="checkbox" name="CHECK">
+        <label for="WEB_DESIGN">WEB DESIGN</label>
+        <input type="checkbox" name="CHECK">
+        <label for="GRAPHICS">GRAPHICS</label>
+        <input type="checkbox" name="CHECK">
+        <label for="VIDEO_EDITING" name="CHECK">VIDEO EDITING</label>
+        <input type="checkbox" name="CHECK">
+        <label for="SCRIPT_WRITING">SCRIPT WRITING</label><br>
+        <h1>FILE SELECT</h1>
+        <label for="UPLOAD">UPLOAD: </label>
+        <input type="file" value="choose file"> <br>
+        <h1>TEXT AREA</h1>
+        <label for="DESCRIPTION">Description: </label>
+        <textarea name="TEXT" id="" cols="20" rows="5" placeholder="Note: "></textarea> <br>
+        <h1>SELECT BOX</h1>
+        <label for="country">COUNTRY: </label>
+        <select name="country" id="">
+            <option value="Nigeria">Nigeria</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Togo">Togo</option>
+            <option value="Zimbabuwe">Zimbabuwe</option>
+        </select> <br>
+        <button type="submit">SEND</button>  <button type="reset">RESET</button>
+    </form>
+</body>
+</html>
