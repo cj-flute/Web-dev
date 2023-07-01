@@ -1,7 +1,11 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[html]": {
-        "editor.defaultFormatter": "HookyQR.beautify"
-    },
-    "liveServer.settings.port": 5501
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "liveServer.settings.port": 5501,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.fontSize": 12
 }
