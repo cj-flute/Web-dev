@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die game</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .bigdiv{
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            border: 1px solid black;
+            height: 400px;
+            width: 500px;
+            background-color: purple;
+            /* background-image: url(/resource/multimedia/images/dieSide6.jpeg); */
+        }
+        #die1div, #die2div{
+            position: absolute;
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+            background-image: url(/resource/multimedia/images/dieSide1.jpeg);
+            background-size: contain;
+            top: 25%;
+        }
+        #die1div{
+            left: 25%;
+        }
+        #die2div{
+            right: 25%;
+        }
+        #btn{
+            position: absolute;
+            height: 40px;
+            width: 80px;
+            top: 60%;
+            left: 42%;
+            border-radius: 25px;
+        }
+        #btn:hover{
+            background-color: rgb(100, 100, 100);
+        }
+    </style>
+</head>
+<body>
+    <div class="bigdiv">
+        <div id="die1div"></div>
+        <div id="die2div"></div>
+        <button id="btn">Spin</button>
+    </div>
+    <script>
+        const d1 = [1,2,3,4,5,6];
+        const d2 = [1,2,3,4,5,6];
+        const die1 = document.getElementById("die1div");
+        const die2 = document.getElementById("die2div");
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function func(){
+            const rand1 = d1[Math.floor(Math.random()*d1.length)];
+            const rand2 = d2[Math.floor(Math.random()*d2.length)];
+
+            // for(let x = 0; x<10; x++){
+            //     setInterval(()=>{
+            //         console.log(x);
+            //     },10000000)
+            //     // setTimeout(()=>{
+            //     //     for(let i = 0; i<10; i++){
+            //     //         if (rand1 == rand1){
+            //     //             die1.style.backgroundImage = `url(/resource/multimedia/images/dieSide${rand1}.jpeg)`;
+            //     //         }
+            //     //         if (rand2 == rand2){
+            //     //             die2.style.backgroundImage = `url(/resource/multimedia/images/dieSide${rand2}.jpeg)`;
+            //     //         }
+            //     //         console.log(i);
+            //     //     }
+    
+            //     // },1000)
+            // }
+
+            if (rand1 == rand1){
+                die1.style.backgroundImage = `url(/resource/multimedia/images/dieSide${rand1}.jpeg)`;
+            }
+            
+            if (rand2 == rand2){
+                die2.style.backgroundImage = `url(/resource/multimedia/images/dieSide${rand2}.jpeg)`;
+            }
+        })
+    </script>
+</body>
+</html>
