@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
     <style>
         body{
             margin: 0;
@@ -186,11 +186,18 @@
         box1Btn.addEventListener("click", func);
         headerBtn.addEventListener("click", func);
 
+        function refresh(){
+            setTimeout(() => {
+            history.go()
+            },3000);
+        }
+            
         //the login button from the form calling an event listner that trigers the function that checks the
         //value of the username input and password input before making the display to success set to 'block'
         formBtn.addEventListener("click", function(){
             if(username.value == dbUser && password.value == dbPass){
                 success.style.display = "block";
+                refresh();
             }else if(username.value == "" && password.value == ""){
                 username.style.border = "solid red";
                 password.style.border = "solid red";
@@ -202,11 +209,13 @@
                 username.style.border = "none";
             }else if(username.value !== dbUser || password.value !== dbPass){
                 failure.style.display = "block";
+                refresh();
             }
         })
         let func2 = function(){
             userLogForm.style.display = "none", modal.style.display = "none";
             success.style.display = "none", failure.style.display = "none";
+            document.location.reload();
         }
         cancel1.addEventListener("click", func2);
         cancel2.addEventListener("click", func2);
