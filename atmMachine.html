@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM MACHINE</title>
+    <link rel="stylesheet" href="/resource/css/atmMachine.css">
+</head>
+<body>
+    <!-- Div 1 - Insert card to check pin -->
+    <div id="div1">
+        <label id="L1"><h2>PIN</h2></label><br><br>
+        <input type="password" placeholder="       XXXX  " id="div1input"><br><br>
+        <button id="send">SEND</button>
+        <p id="warning"></p>
+    </div>
+
+    <!-- Div 2 - Sellect optioins -->
+    <div id="div2">
+        <div id="div2L">
+            <div class="div2L">
+                <button class="btn" id="btnd2L1">⚫</button>
+                <p id="withdrawal">Withdrawal</p>
+            </div>
+            <div class="div2L">
+                <button class="btn" id="btnd2L2">⚫</button>
+                <p id="transfer">Transfer</p>
+            </div>
+            <div class="div2L">
+                <button class="btn" id="btnd2L3">⚫</button>
+                <p id="deposit">Deposit</p>
+            </div>
+            <div class="div2L">
+                <button class="btn" id="btnd2L4">⚫</button>
+                <p id="language">Language</p>
+            </div>
+        </div>
+        <div id="div2R">
+            <div class="div2R">
+                <button class="btn" id="btnd2R1">⚫</button>
+                <p id="enquries">Enquries</p>
+            </div>
+            <div class="div2R">
+                <button class="btn" id="btnd2R2">⚫</button>
+                <p id="pay">Pay for Bills</p>
+            </div>
+            <div class="div2R">
+                <button class="btn" id="btnd2R3">⚫</button>
+                <p id="check">Change Pin</p>
+            </div>
+            <div class="div2R">
+                <button class="btn" id="btnd2R4">⚫</button>
+                <p id="exit">Exit</p>
+            </div>
+        </div>
+    </div>
+    <!-- Withdrawal div -->
+    <div id="withdrawalDiv">
+        <label id="L2"><h2>AMOUNT</h2></label><br><br>
+        <input type="text" placeholder="        0.00" id="Winput"><br><br>
+        <button id="Wbtn">SEND</button>
+        <button id="Wbtn2">↩️</button>
+
+        <div id="withdrawalMessageDiv">
+            <h2 id="wMessage">checking</h2>
+        </div>
+    </div>
+
+    <!-- Transfer div -->
+    <!-- transfer div 1 -->
+    <div id="transferDiv1">
+        <label id="L3"><h2>INPUT BANK</h2></label><br>
+        <input type="text" id="tBnkinput" placeholder="           Bank Name"><br>
+        <button id="tBnkBtn">SEND</button><br>
+        <button class="tBnkBtn2" id="tBnkBtn2.1">↩️</button>
+    </div>
+    <!-- transfer div 2 -->
+    <div id="transferDiv2">
+        <label id="L4"><h2>TRANSFER</h2></label><br>
+        <label id="L5">ACOUNT NO: </label>
+        <input type="text" id="accountNo" placeholder="Acount No"><br>
+        <label id="L6">BANK: </label>
+        <em id="bankName">Check Bank</em><br>
+        <label id="L7">AMOUNT: </label>
+        <input type="text" id="tAmountinput" placeholder="Amount"><br>
+        <button id="tAmountBtn">SEND</button><br>
+        <button class="tBnkBtn2" id="tBnkBtn2.2">↩️</button>
+    </div>
+    <!-- transfer div 3 -->
+    <div id="transferDiv3">
+        <h2 id="tMessage">$1000 sent successfully</h2>
+        <img src="/resource/multimedia/images/good symbol.png" alt="Good" id="img">
+        <button class="tBnkBtn2" id="tBnkBtn3">↩️</button>
+    </div>
+    <div id="transferDiv4">
+        <h4 id="confirmationMessage">Kindly confirm your inputs</h4>
+        <label id="L8">BANK: </label>
+        <em id="CBnkName">Cheking Bank</em>
+        <label id="L9">ACOUNT NO: </label>
+        <em id="CAcctNo">000888899995555</em>
+        <label id="L10">AMOUNT: </label>
+        <em id="CAmt">10000000</em>
+        <button id="cOkBtn">OK</button>
+        <button id="cBackBtn">BACK</button>
+    </div>
+
+    <!-- deposit div -->
+    <div id="depositDiv">
+        <label id="L11">INPUT YOUR CASH</label>
+        <input type="text" id="dAmt">
+        <button id="dOkBtn">OK</button>
+        <button id="dBackBtn">BACK</button>
+    </div>
+
+    <script src="/resource/jss/atmMachine.js"></script>
+
+</body>
+</html>
