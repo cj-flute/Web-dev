@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  background-image: url(/resource/multimedia/images/pexels-david-mcbee-730547.jpg);
+  background-image: url(/web-dev/resource/multimedia/images/pexels-david-mcbee-730547.jpg);
   background-size: contain;
 }
 #div1,
