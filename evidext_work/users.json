@@ -1,0 +1,26 @@
+[
+  {
+    "username": "Sirmario",
+    "email": "sirmario42@gmail.com",
+    "phone": "08147850459",
+    "isOnline": true,
+    "address": "Permsite OKo",
+    "age": "20"
+  },
+  {
+    "username": "Austine",
+    "email": "johnbosco@gmail.com",
+    "phone": "015631028645341",
+    "isOnline": true,
+    "address": "Permsite OKo",
+    "age": "20"
+  },
+  {
+    "username": "Chinedu",
+    "email": "chinedu@gmail.com",
+    "phone": "875486513545",
+    "isOnline": false,
+    "address": "Ekwulobia",
+    "age": "24"
+  }
+]

@@ -1,0 +1,70 @@
+.stop-watch-section {
+    width: 100%;
+    height: 1000px;
+}
+.stop-watch-box {
+    border: 3px solid rgba(0, 0, 0, 1);
+    border-radius: 15px;
+    width: 50%;
+    height: 600px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 5px 0 5px rgba(21, 21, 21, 0.508);
+}
+.center-box {
+    /* border: 1px solid red; */
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+
+}
+.count-div {
+    /* border: 1px solid green; */
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.count-center-box {
+    /* border: 1px solid yellow; */
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+}
+.time-div {
+    /* border: 1px solid blue; */
+    width: 150px;
+    height: 100px;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.column {
+    font-size: 90px;
+}
+.num {
+    font-size: 90px;
+}
+.T {
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 45%;
+}
+.btn-box {
+    /* border: 1px solid green; */
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+}
+.btn:hover {
+    background-color: rgba(128, 128, 128, 0.63);
+}
